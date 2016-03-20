@@ -3,6 +3,10 @@
 	$ git config --global user.email "email@example.com"
 
 
+
+
+
+
 二、配置ssh keys（本地电脑连接远程github repository）
 1.检查ssh keys在本地电脑是否已经存在
 	$ ls -al ~/.ssh
@@ -14,6 +18,9 @@
 	登录 GITHUB 在 Settings->SSH keys 菜单下添加，将剪切板的内容粘贴到 Key 文本框中，名称可以随意填写。到现在为止，配置工作已经完成。
 
 
+
+
+
 三.获取远程项目
 1.git init
 	初始化 GIT，只有初始化了以后才可以使用 GIT 相关命令。在初始化之前，可以先创建一个文件夹
@@ -22,8 +29,14 @@
 	$ git clone git@github.com:PureBlueFrank/spring-framework.git
 
 
+
+
 四、删除本地误建仓库
 	在你创建仓库的目录下有个隐藏文件叫".git"把这个文件删除就可以了
+
+
+
+
 
 
 五、本地工程推送到github上去
@@ -51,3 +64,19 @@
 6、然后，推送到远程仓库
 	$ git push -u origin master
 	由于远程库是空的，我们第一次推送master分支时，加上了-u参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令。
+
+
+
+
+六、本地仓库向远程仓库添加、删除文件
+1.把要删除、添加的文件add进去（下面命令行是add所有变化）每一次add之后再次使用git status命令来查看是否已经stage了
+	git add --all 
+
+2.把改动commit后再push
+
+
+
+
+
+
+
