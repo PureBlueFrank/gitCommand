@@ -1,4 +1,4 @@
-﻿﻿﻿﻿一、用户设置
+﻿一、用户设置
 	$ git config --global user.name "Your Name"
 	$ git config --global user.email "email@example.com"
 
@@ -91,7 +91,7 @@ git branch 命令用于创建分支，查看分支。查看分支可以使用参
 
 
 
-2.远程分支间切换
+2.本地分支间切换
 	$ git checkout newbranch
 
 
@@ -109,7 +109,7 @@ git pull 命令用来更新代码，该命令相当于 git fetch 和 git merge �
 	$ git branch test
 
 3.切换到本地分支
-	$ git branch master
+	$ git checkout master
 	
 4.删除本地分支
 	$ git branch -d master
