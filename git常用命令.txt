@@ -1,4 +1,4 @@
-һ���û�����
+一、用户设置
 	$ git config --global user.name "Your Name"
 	$ git config --global user.email "email@example.com"
 
@@ -7,83 +7,87 @@
 
 
 
-��������ssh keys�����ص�������Զ��github repository��
-1.���ssh keys�ڱ��ص����Ƿ��Ѿ�����
+二、配置ssh keys（本地电脑连接远程github repository）
+1.检查ssh keys在本地电脑是否已经存在
 	$ ls -al ~/.ssh
-2.����keys
+2.生成keys
 	$ ssh-keygen -t rsa -C "1660215292@qq.com"
-3.Ȼ����ʾ����ssh����ʱ����֤����
-4.���Ƹո����ɵ�/.ssh/id_rsa.pub�Ĺ�Կ����
-5.����Կ���뵽github�˺�
-	��¼ GITHUB �� Settings->SSH keys �˵������ӣ������а������ճ���� Key �ı����У����ƿ���������д��������Ϊֹ�����ù����Ѿ���ɡ�
+3.然后按提示设置ssh连接时的验证密码
+4.复制刚刚生成的/.ssh/id_rsa.pub的公钥内容
+5.将公钥加入到github账号
+	登录 GITHUB 在 Settings->SSH keys 菜单下添加，将剪切板的内容粘贴到 Key 文本框中，名称可以随意填写。到现在为止，配置工作已经完成。
 
 
 
 
 
-��.��ȡԶ����Ŀ
+三.获取远程项目
 1.git init
-	��ʼ�� GIT��ֻ�г�ʼ�����Ժ�ſ���ʹ�� GIT �������ڳ�ʼ��֮ǰ�������ȴ���һ���ļ���
+	初始化 GIT，只有初始化了以后才可以使用 GIT 相关命令。在初始化之前，可以先创建一个文件夹
 
-2.��ȡԶ����Ŀ�������ص����ء�Զ�̿�ĵ�ַ�� GITHUB ��Ŀ�л����ṩ��
+2.获取远程项目，并下载到本地。远程库的地址在 GITHUB 项目中会有提供。
 	$ git clone git@github.com:PureBlueFrank/spring-framework.git
 
 
 
 
-�ġ�ɾ�������󽨲ֿ�
-	���㴴���ֿ��Ŀ¼���и������ļ���".git"������ļ�ɾ���Ϳ�����
+四、删除本地误建仓库
+	在你创建仓库的目录下有个隐藏文件叫".git"把这个文件删除就可以了
 
 
 
 
 
 
-�塢���ع������͵�github��ȥ
-1.��github�ϴ���һ���ֿ�
+五、本地工程推送到github上去
+1.在github上创建一个仓库
 	git@github.com:PureBlueFrank/SAIC.git
 
 
-2.��git bash�´�������ʼ�����زֿ�
+2.在git bash下创建并初始化本地仓库
 	$ mkdir SAIC
 	$ git init
 
-3.�ҵ�Ҫ�ϴ���Զ�ֿ̲����Ŀ�ļ������뵽�մ����ı��زֿ�Ŀ¼���������Ŀ¼����
+3.找到要上传到远程仓库的项目文件，放入到刚创建的本地仓库目录下面或其子目录下面
 
 
-4����Զ�ֿ̲��뱾�زֿ����
+4、将远程仓库与本地仓库关联
 	$ git remote add origin git@github.com:PureBlueFrank/SAIC.git
 
 
-5.����Ŀ(���ӡ��޸ġ�ɾ�����ļ�����add)���ӵ����زֿ�
+5.将项目(添加、修改、删除的文件可以add)添加到本地仓库
 	$ git add SAIC
-	������֮����Ŀ�����ӵ��ݴ�����Ȼ���������git�������ύ��
+	该命令之后，项目被添加到暂存区，然后必须利用git的命令提交，
 	$ git commit -m "SAIC first commit some public tools"
-	-m ֮����൱��ע�Ͳ���
+	-m 之后的相当于注释部分
 
-6��Ȼ�����͵�Զ�ֿ̲�
+6、然后，推送到远程仓库
 	$ git push -u origin master
-	����Զ�̿��ǿյģ����ǵ�һ������master��֧ʱ��������-u������Git������ѱ��ص�master��֧�������͵�Զ���µ�master��֧������ѱ��ص�master��֧��Զ�̵�master��֧�������������Ժ�����ͻ�����ȡʱ�Ϳ��Լ����
+	由于远程库是空的，我们第一次推送master分支时，加上了-u参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令。
 
 
 
 
-�������زֿ���Զ�ֿ̲����ӡ�ɾ���ļ�
-1.��Ҫɾ�������ӵ��ļ�add��ȥ��������������add���б仯����ȻҲ����һ��һ���ļ�add��ȥ��ÿһ��add֮���ٴ�ʹ��git status�������鿴�Ƿ��Ѿ�stage��
+六、本地仓库向远程仓库添加、删除文件
+1.把要删除、添加的文件add进去（下面命令行是add所有变化，当然也可以一个一个文件add进去）每一次add之后再次使用git status命令来查看是否已经stage了
 	git add --all 
 
-2.�ѸĶ�commit����push
+2.把改动commit后再push
 
 
 
 
 
-�ߡ�ɾ���Ѿ�add��commit���ļ� 
-	һ���� git rm --cached "�ļ�·��"����ɾ�������ļ����������ļ��ӻ�����ɾ����
+七、删除已经add进commit的文件 
+	一种是 git rm --cached "文件路径"，不删除物理文件，仅将该文件从缓存中删除；
 
-	һ���� git rm --f "�ļ�·��"�����������ļ��ӻ�����ɾ�������Ὣ�����ļ�ɾ����������յ�����Ͱ����
+	一种是 git rm --f "文件路径"，不仅将该文件从缓存中删除，还会将物理文件删除（不会回收到垃圾桶）。
 
 
+八、更新远程代码到本地
+1.查看远程仓库
+	$ git remove -v
+2.从远程获取最新版本到本地
 
 
 
