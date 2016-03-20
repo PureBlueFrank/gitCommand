@@ -1,4 +1,4 @@
-﻿﻿﻿一、用户设置
+﻿﻿﻿﻿一、用户设置
 	$ git config --global user.name "Your Name"
 	$ git config --global user.email "email@example.com"
 
@@ -131,4 +131,8 @@ git pull 命令用来更新代码，该命令相当于 git fetch 和 git merge �
 
 2.push到远程仓库
 	$ git push origin test
-	
+
+
+十二、删除远程分支
+	$ git branch -r -d origin/branch-name
+	$ git push origin :branch-name
