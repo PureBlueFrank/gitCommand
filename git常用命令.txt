@@ -1,4 +1,4 @@
-一、用户设置
+﻿一、用户设置
 	$ git config --global user.name "Your Name"
 	$ git config --global user.email "email@example.com"
 
@@ -89,11 +89,15 @@
 	$ git branch -av
 git branch 命令用于创建分支，查看分支。查看分支可以使用参数-a,-v,-r等，a代表所有，v代表版本信息，r 代表显示远程分支
 
-2.从远程获取最新版本到本地
 
 
+2.分支间切换
+	$ git checkout newbranch
 
 
+3.拉取分支代码
+	$ git pull
+git pull 命令用来更新代码，该命令相当于 git fetch 和 git merge 的组合
 
 
 
