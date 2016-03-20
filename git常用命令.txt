@@ -1,4 +1,4 @@
-﻿一、用户设置
+﻿﻿一、用户设置
 	$ git config --global user.name "Your Name"
 	$ git config --global user.email "email@example.com"
 
@@ -118,3 +118,9 @@ git pull 命令用来更新代码，该命令相当于 git fetch 和 git merge �
 	$ git diff newbranch
 	该句为对比当前分支与命令行中分支代码对比
 
+
+十、代码merge与提交
+	$ git merge newbranch
+	该命令行是在本地把命令行内的分支merge到当前命令行下的分支
+        $ git push
+	向远程仓库push
