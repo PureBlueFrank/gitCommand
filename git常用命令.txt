@@ -1,0 +1,53 @@
+一、用户设置
+	$ git config --global user.name "Your Name"
+	$ git config --global user.email "email@example.com"
+
+
+二、配置ssh keys（本地电脑连接远程github repository）
+1.检查ssh keys在本地电脑是否已经存在
+	$ ls -al ~/.ssh
+2.生成keys
+	$ ssh-keygen -t rsa -C "1660215292@qq.com"
+3.然后按提示设置ssh连接时的验证密码
+4.复制刚刚生成的/.ssh/id_rsa.pub的公钥内容
+5.将公钥加入到github账号
+	登录 GITHUB 在 Settings->SSH keys 菜单下添加，将剪切板的内容粘贴到 Key 文本框中，名称可以随意填写。到现在为止，配置工作已经完成。
+
+
+三.获取远程项目
+1.git init
+	初始化 GIT，只有初始化了以后才可以使用 GIT 相关命令。在初始化之前，可以先创建一个文件夹
+
+2.获取远程项目，并下载到本地。远程库的地址在 GITHUB 项目中会有提供。
+	$ git clone git@github.com:PureBlueFrank/spring-framework.git
+
+
+四、删除本地误建仓库
+	在你创建仓库的目录下有个隐藏文件叫".git"把这个文件删除就可以了
+
+
+五、本地工程推送到github上去
+1.在github上创建一个仓库
+	git@github.com:PureBlueFrank/SAIC.git
+
+
+2.在git bash下创建并初始化本地仓库
+	$ mkdir SAIC
+	$ git init
+
+3.找到要上传到远程仓库的项目文件，放入到刚创建的本地仓库目录下面或其子目录下面
+
+
+4、将远程仓库与本地仓库关联
+	$ git remote add origin git@github.com:PureBlueFrank/SAIC.git
+
+
+5.将项目(添加、修改、删除的文件可以add)添加到本地仓库
+	$ git add SAIC
+	该命令之后，项目被添加到暂存区，然后必须利用git的命令提交，
+	$ git commit -m "SAIC first commit some public tools"
+	-m 之后的相当于注释部分
+
+6、然后，推送到远程仓库
+	$ git push -u origin master
+	由于远程库是空的，我们第一次推送master分支时，加上了-u参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令。
