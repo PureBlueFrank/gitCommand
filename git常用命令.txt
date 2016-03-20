@@ -114,4 +114,7 @@ git pull 命令用来更新代码，该命令相当于 git fetch 和 git merge �
 4.删除本地分支
 	$ git branch -d master
 
+5.远程分支对比
+	$ git diff newbranch
+	该句为对比当前分支与命令行中分支代码对比
 
