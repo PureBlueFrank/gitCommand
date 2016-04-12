@@ -136,3 +136,24 @@ git pull 命令用来更新代码，该命令相当于 git fetch 和 git merge �
 十二、删除远程分支
 	$ git branch -r -d origin/branch-name
 	$ git push origin :branch-name
+
+十三、查看本地仓库和远程仓库已经提交未push的对比
+	git log 本地branch ^远程分支   可以查看本地有远程没有的提交。
+	git log master ^origin/master
+	
+	git log 远程分子 ^本地branch   可以查看远程有，本地没有的提交。
+
+
+十四、撤销commit信息
+如果不小心commit了一个不需要commit的文件，可以对其进行撤销。
+先使用git log 查看 commit日志
+找到需要回退的那次commit的 哈希值，
+	git reset --hard commit_id
+方法: 
+    git reset --hard <commit_id>
+    git push origin HEAD --force 
+    HEAD 最近一个提交
+    HEAD^ 上一次
+<commit_id>  每次commit的SHA1值. 可以用git log 看到,也可以在页面上commit标签页里找到	
+
+
